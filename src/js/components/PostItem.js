@@ -49,6 +49,9 @@ const ItemDelete = styled.span`
     top: 30px;
     right: 50px;
     cursor: pointer;
+    &:hover {
+        color: red;
+    }
 `
 
 const Li = styled.li`
