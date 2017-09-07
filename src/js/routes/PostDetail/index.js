@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import PostListContainer from '../../containers/PostListContainer'
+import PostDetailContainer from '../../containers/PostDetailContainer'
+
 
 export default class extends Component {
     constructor(props) {
@@ -8,7 +9,7 @@ export default class extends Component {
 
     render() {
         return <div>
-            <PostListContainer />
+            <PostDetailContainer />
         </div>
     }
 }

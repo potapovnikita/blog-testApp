@@ -1,48 +1,38 @@
 /**
- * save data to Local Storage
+ * save data to Local Storage(LS)
  */
 
 class Database {
 
-    getTodoListFromLS() {
-        const todoList = JSON.parse(localStorage.getItem('todoList'))
-        if (todoList) {
-            return Object.values(todoList)
+    getPostsListFromLS() {
+        const postsList = JSON.parse(localStorage.getItem('postsList'))
+        if (postsList) {
+            return Object.values(postsList)
         }
         return null
     }
 
-    addTodoLS(data) {
-        const currentTodoList = JSON.parse(localStorage.getItem('todoList'))
+    addPostLS(data) {
+        const currentPostsList = JSON.parse(localStorage.getItem('postsList'))
 
-        if (currentTodoList && currentTodoList.length) {
-            currentTodoList.push(data)
-            localStorage.setItem('todoList', JSON.stringify(currentTodoList))
+        if (currentPostsList && currentPostsList.length) {
+            currentPostsList.push(data)
+            localStorage.setItem('postsList', JSON.stringify(currentPostsList))
         } else {
-            const newTodoItem = JSON.stringify([data])
-            localStorage.setItem('todoList', newTodoItem)
+            const newPostItem = JSON.stringify([data])
+            localStorage.setItem('postsList', newPostItem)
         }
 
         return data
     }
 
-    async removeTodoLS(id) {
-        const currentTodoList = JSON.parse(localStorage.getItem('todoList'))
-        const deleteItemIndex = currentTodoList.findIndex((item) => item.id === id)
-        currentTodoList.splice(deleteItemIndex, 1)
-        localStorage.setItem('todoList', JSON.stringify(currentTodoList))
+    async removePostLS(id) {
+        const currentPostsList = JSON.parse(localStorage.getItem('postsList'))
+        const deleteItemIndex = currentPostsList.findIndex((item) => item.id === id)
+        currentPostsList.splice(deleteItemIndex, 1)
+        localStorage.setItem('postsList', JSON.stringify(currentPostsList))
 
         return id
-    }
-
-    async updateTodoLS(todo) {
-        const currentTodoList = JSON.parse(localStorage.getItem('todoList'))
-        const updateItemIndex = currentTodoList.findIndex((item) => item.id === todo.id)
-        currentTodoList[updateItemIndex] = { ...currentTodoList[updateItemIndex], ...todo }
-
-        localStorage.setItem('todoList', JSON.stringify(currentTodoList))
-
-        return todo
     }
 }
 

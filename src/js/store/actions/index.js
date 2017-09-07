@@ -1,1 +1,1 @@
-export todo from './todo'
+export post from './post'

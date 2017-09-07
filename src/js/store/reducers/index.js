@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import todoList from './todos'
+import postsList from './posts'
 
 export default combineReducers({
-    todoList,
+    postsList,
 })

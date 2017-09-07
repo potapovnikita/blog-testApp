@@ -1,4 +1,3 @@
-export const addTodo = 'ADD_TODO'
-export const removeTodo = 'REMOVE_TODO'
-export const updateTodo = 'UPDATE_TODO'
-export const getTodoList = 'GET_TODO_LIST'
+export const addPost = 'ADD_POST'
+export const removePost = 'REMOVE_POST'
+export const getPostsList = 'GET_POSTS_LIST'

@@ -8,13 +8,14 @@ import * as actions from './store/constants'
 import DatabaseProvider from './libs/database'
 import '../stylus/index.styl'
 
+
 const Database = new DatabaseProvider()
 
 const getInfo = async function() {
-    const data = await Database.getTodoListFromLS()
+    const data = await Database.getPostsListFromLS()
     if (data) {
         store.dispatch({
-            type: actions.getTodoList,
+            type: actions.getPostsList,
             payload: data
         })
     }

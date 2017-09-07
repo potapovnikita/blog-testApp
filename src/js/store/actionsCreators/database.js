@@ -1,25 +1,18 @@
-import * as actions from '../actions/todo'
+import * as actions from '../actions/post'
 import Database from '../../libs/database'
 
 const db = new Database()
 
-export function addTodo(payload) {
+export function addPost(payload) {
     return async (dispatch) => {
-        const todo = await db.addTodoLS(payload)
-        dispatch(actions.addTodo(todo))
+        const post = await db.addPostLS(payload)
+        dispatch(actions.addPost(post))
     }
 }
 
-export function removeTodo(payload) {
+export function removePost(payload) {
     return async (dispatch) => {
-        const todo = await db.removeTodoLS(payload)
-        dispatch(actions.removeTodo(todo))
-    }
-}
-
-export function updateTodo(payload) {
-    return async (dispatch) => {
-        const todo = await db.updateTodoLS(payload)
-        dispatch(actions.updateTodo(todo))
+        const post = await db.removePostLS(payload)
+        dispatch(actions.removePost(post))
     }
 }

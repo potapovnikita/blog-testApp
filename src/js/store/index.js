@@ -9,7 +9,7 @@ const middlewares = [
 ]
 
 const initialState = {
-    todoList: [],
+    postsList: [],
 }
 
 const store = createStore(rootReducer, initialState, composeWithDevTools(applyMiddleware(...middlewares)))
